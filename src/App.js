@@ -8,6 +8,7 @@ import Items from './Pages/Items/Items';
 import Locations from './Pages/Locations/Locations';
 import Moves from './Pages/Moves/Moves';
 import Charts from './Pages/Charts/Charts';
+import './GlobalStyles.scss';
 
 class App extends Component {
   render() {
