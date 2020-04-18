@@ -1,21 +1,43 @@
 import React, { Component } from 'react';
 import * as fetcher from '../../fetcher';
+import List from '../../Components/List/List';
+import './Pokedex.scss';
 
 class Pokedex extends Component {
   state = {
-    pokedex: [],
+    pokemons: [],
+    abilities: [],
   };
 
   async componentDidMount() {
-    const resPokedex = await fetcher.fetchPokedex();
+    const resPokemons = await fetcher.fetchPokemons();
+    const resAbility = await fetcher.fetchAbility();
 
     this.setState({
-      pokedex: resPokedex,
+      pokemons: resPokemons,
+      abilities: resAbility,
     });
   }
 
   render() {
-    return <div>Pokedex</div>;
+    console.log('state', this.state);
+    return (
+      <div className="pokedex page">
+        <div className="pokedex__sidebar">
+          <ul className="pokedex__list">
+            {this.state.abilities.map((ability) => {
+              return (
+                <li key={ability.name} className="list__item">
+                  {ability.name}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+
+        <List pokemons={this.state.pokemons} />
+      </div>
+    );
   }
 }
 
