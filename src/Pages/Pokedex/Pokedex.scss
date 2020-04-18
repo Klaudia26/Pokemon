@@ -1,0 +1,16 @@
+.pokedex {
+  border: 1px solid black;
+  overflow-y: scroll;
+  height: 100%;
+
+  &__sidebar {
+    overflow-y: scroll;
+    border: 1px solid red;
+    position: fixed;
+    height: 100%;
+    width: 15rem;
+  }
+
+  &__list {
+  }
+}

@@ -30,9 +30,14 @@ body {
   font-weight: 400;
   box-sizing: border-box;
   font-size: 1.6rem;
+  height: 100vh;
   background-image: url('./img/background.jpg');
   background-size: cover;
   background-position: top;
+}
+
+#root {
+  height: 100%;
 }
 
 li {
