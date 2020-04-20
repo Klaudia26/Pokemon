@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
 import * as fetcher from '../../fetcher';
-import Card from './Card';
-import Stats from './Stats';
+import Card from '../Card/Card';
+import Stats from '../Stats/Stats';
 
 class ListElement extends Component {
   state = {
     pokemon: null,
   };
   async componentDidMount() {
-    console.log('props', this.props);
-
     const resPokemon = await fetcher.fetchPokemon(this.props.pokemon.url);
-    console.log('object', resPokemon);
 
     this.setState({
       pokemon: resPokemon,
@@ -23,8 +20,12 @@ class ListElement extends Component {
     }
     return (
       <li className="list-element">
-        <Card pokemon={this.state.pokemon} />
-        {/* <Stats /> */}
+        <div className="list-element--left">
+          <Card pokemon={this.state.pokemon} />
+        </div>
+        <div className="list-element--right">
+          <Stats pokemon={this.state.pokemon} />
+        </div>
       </li>
     );
   }

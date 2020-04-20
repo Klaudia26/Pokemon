@@ -20,7 +20,6 @@ class Pokedex extends Component {
   }
 
   render() {
-    console.log('state', this.state);
     return (
       <div className="pokedex page">
         <div className="pokedex__sidebar">
