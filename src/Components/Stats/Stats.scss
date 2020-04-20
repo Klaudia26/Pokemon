@@ -1,0 +1,35 @@
+.stats {
+  .list {
+    margin-left: 0rem;
+    &__item {
+      display: flex;
+      justify-content: flex-end;
+      width: 400px;
+      margin: auto;
+      padding: 6px 0;
+      .stats-name {
+      }
+
+      .stats-base {
+        padding: 0 2.5rem;
+      }
+
+      .wrapper-chart {
+        width: 200px;
+        background-color: #f59f00;
+        position: relative;
+        border-radius: 5px;
+        .stats-chart {
+          position: absolute;
+
+          top: 0;
+          left: 0;
+          height: 100%;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+          background-color: red;
+        }
+      }
+    }
+  }
+}
