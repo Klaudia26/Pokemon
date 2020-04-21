@@ -2,6 +2,24 @@ import React from 'react';
 import './Stats.scss';
 
 const Stats = ({ pokemon }) => {
+  function generateColor(value) {
+    const light = '#E25A5A';
+    const medium = '#d68b00';
+    const high = '#6AA64C';
+
+    let background = '';
+
+    if (value <= 50) {
+      background = light;
+    } else if (value > 50 && value <= 80) {
+      background = medium;
+    } else {
+      background = high;
+    }
+
+    return { background: background, width: value };
+  }
+
   return (
     <div className="stats">
       <ul className="list">
@@ -13,15 +31,7 @@ const Stats = ({ pokemon }) => {
               <div className="wrapper-chart">
                 <div
                   className="stats-chart"
-                  style={{
-                    backgroundColor:
-                      stat.base_stat <= 50
-                        ? '#E25A5A'
-                        : '#d68b00' || stat.base_stat >= 90
-                        ? '#6AA64C'
-                        : '#E15454',
-                    width: stat.base_stat,
-                  }}
+                  style={generateColor(stat.base_stat)}
                 />
               </div>
             </li>

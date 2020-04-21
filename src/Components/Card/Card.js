@@ -14,6 +14,7 @@ const Card = ({ pokemon }) => {
       </p>
       <span> weight: {pokemon.weight} kg</span>
       <span> height: {pokemon.height} m</span>
+      <div className="id-number">#{pokemon.id}</div>
     </div>
   );
 };

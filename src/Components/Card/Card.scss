@@ -1,7 +1,19 @@
 .card {
+  position: relative;
   background-color: #ffa805;
   box-shadow: 0 2px 5px 0 #e69500;
   padding: 2rem;
   border-radius: 10px;
   text-align: center;
+  z-index: 33;
+
+  .id-number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 13rem;
+    z-index: -1;
+    color: #ffcb6b;
+  }
 }

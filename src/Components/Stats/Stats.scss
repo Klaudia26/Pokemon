@@ -4,14 +4,20 @@
     &__item {
       display: flex;
       justify-content: flex-end;
+      align-items: center;
       width: 400px;
       margin: auto;
       padding: 6px 0;
+
       .stats-name {
+        &::first-letter {
+          text-transform: uppercase;
+        }
       }
 
       .stats-base {
         padding: 0 2.5rem;
+        font-weight: 600;
       }
 
       .wrapper-chart {
@@ -19,6 +25,8 @@
         background-color: #f59f00;
         position: relative;
         border-radius: 5px;
+        height: 1.2rem;
+
         .stats-chart {
           position: absolute;
 
